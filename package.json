@@ -1,0 +1,25 @@
+{
+  "name": "localstore",
+  "version": "1.0.0",
+  "description": "application",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalpardeshi419/NodeJs.git"
+  },
+  "author": "vishal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalpardeshi419/NodeJs/issues"
+  },
+  "homepage": "https://github.com/vishalpardeshi419/NodeJs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.19",
+    "mongoose-morgan": "^1.0.15",
+    "nodemon": "^2.0.4"
+  }
+}
