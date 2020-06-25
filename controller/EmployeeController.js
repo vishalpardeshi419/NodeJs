@@ -43,12 +43,10 @@ const store = (req, res, next) =>  {
         age: req.body.age
     })
 
-    console.log(employee)
-
     employee.save()
     .then(response => {
         res.json({
-            message: 'Employee Added Successfully!'
+            message: employee//'Employee Added Successfully!'
         })
     })
     .catch(error => {
@@ -88,9 +86,9 @@ const update = (req, res, next) => {
 
 const destroy = (req, res, next) => {
     let employeeID = req.body.employeeID
-    Employee.findByIdAndRemove(emplyeeID)
+    Employee.findByIdAndRemove(employeeID)
     .then(() => {
-        req.json({
+        res.json({
             message: 'Employee deleted successfully'
         })
     })
@@ -103,6 +101,6 @@ const destroy = (req, res, next) => {
 }
 
 module.exports = {
-     index, show, store, update, destroy
+    index, show, store, update, destroy
 }
 
