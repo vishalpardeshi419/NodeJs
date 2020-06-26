@@ -43,6 +43,16 @@ const store = (req, res, next) =>  {
         age: req.body.age
     })
 
+    if(req.files){
+        //employee.avatar = req.file.path
+        let path = ''
+        req.files.forEach(function(files, index, arr){
+            path = path + files.path + ','
+        })
+        path = path.substring(0, path.lastIndexOf(","))
+        employee.avatar  = path
+    }
+
     employee.save()
     .then(response => {
         res.json({
@@ -81,9 +91,7 @@ const update = (req, res, next) => {
         })
 }
 
-
-// Delete employee 
-
+// Delete employee
 const destroy = (req, res, next) => {
     let employeeID = req.body.employeeID
     Employee.findByIdAndRemove(employeeID)
